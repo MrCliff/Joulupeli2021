@@ -15,7 +15,7 @@ namespace Assets.Scripts
         [SerializeField]
         GameObject catchableItemPrefab;
 
-        private readonly ICollection<CatchableItem> itemsInUse = new List<CatchableItem>();
+        private readonly ICollection<CatchableItem> itemsInUse = new HashSet<CatchableItem>();
         private readonly Queue<CatchableItem> itemsIdle = new Queue<CatchableItem>();
 
         /// <summary>
@@ -34,6 +34,7 @@ namespace Assets.Scripts
                 GameObject go = UnityEngine.Object.Instantiate(catchableItemPrefab);
                 item = go.GetComponent<CatchableItem>();
             }
+            item.gameObject.SetActive(true);
             itemsInUse.Add(item);
             return item;
         }
@@ -43,6 +44,17 @@ namespace Assets.Scripts
             CatchableItem item = GetItem();
             item.Properties = properties;
             return item;
+        }
+
+        /// <summary>
+        /// "Destroys" the given item. Actually removes it from active items and adds it to the pool.
+        /// </summary>
+        /// <param name="item"></param>
+        public void Destroy(CatchableItem item)
+        {
+            item.gameObject.SetActive(false);
+            itemsInUse.Remove(item);
+            itemsIdle.Enqueue(item);
         }
     }
 }

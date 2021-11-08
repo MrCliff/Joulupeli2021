@@ -34,6 +34,11 @@ namespace Assets.Scripts
         private Vector3 spawnLineRightEnd;
         private int spawnCycle = 0;
 
+        /// <summary>
+        /// Pool for all <see cref="CatchableItem"/> objects.
+        /// </summary>
+        public ItemPool ItemPool { get { return itemPool; } }
+
         private void Awake()
         {
             itemProperties = LoadItemProperties();
@@ -100,16 +105,11 @@ namespace Assets.Scripts
 
         private void OnDrawGizmos()
         {
+            UpdateSpawnArea();
             if (spawnLineLeftEnd != null && spawnLineRightEnd != null)
             {
                 Gizmos.color = Color.red;
                 Gizmos.DrawLine(spawnLineLeftEnd, spawnLineRightEnd);
-
-                //if (spawnPointsOnEditor == null) spawnPointsOnEditor = GenerateSpawnPoints(hazardCounts.Length > 0 ? hazardCounts[0] : 0);
-                //foreach (Vector2 spawnPoint in spawnPointsOnEditor)
-                //{
-                //    Gizmos.DrawSphere(spawnPoint, 1f);
-                //}
             }
         }
     }

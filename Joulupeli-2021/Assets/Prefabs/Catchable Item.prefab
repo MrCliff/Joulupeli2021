@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1249354694837807615}
   - component: {fileID: 1249354694837807614}
   - component: {fileID: 1249354694837807608}
+  - component: {fileID: 7649120027625746295}
   - component: {fileID: 3612103002441032284}
   m_Layer: 0
   m_Name: Catchable Item
@@ -105,6 +106,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &7649120027625746295
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249354694837807613}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.83, y: 11.79}
+    newSize: {x: 5.83, y: 11.79}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.83, y: 11.79}
+  m_EdgeRadius: 0
 --- !u!114 &3612103002441032284
 MonoBehaviour:
   m_ObjectHideFlags: 0

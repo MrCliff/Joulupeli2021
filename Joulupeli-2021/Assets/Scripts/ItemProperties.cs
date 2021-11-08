@@ -20,5 +20,9 @@ namespace Assets.Scripts
 
         [SerializeField]
         private bool isGood = true;
+
+        public Sprite Sprite { get { return sprite; } }
+        public int Points { get { return points; } }
+        public bool IsGood { get { return isGood; } }
     }
 }
