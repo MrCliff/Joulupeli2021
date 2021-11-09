@@ -29,6 +29,9 @@ namespace Assets.Scripts
         [SerializeField]
         private ItemPool itemPool = new ItemPool();
 
+        [SerializeField]
+        private CatchableItem.CommonProperties commonItemProperties;
+
         private ItemProperties[] itemProperties;
         private Vector3 spawnLineLeftEnd;
         private Vector3 spawnLineRightEnd;
@@ -73,7 +76,6 @@ namespace Assets.Scripts
                 yield return new WaitForSeconds(initialSpawnIntervalSec * Mathf.Pow(1 - spawnSpeedupPercent, spawnCycle));
 
                 UpdateSpawnArea();
-                Debug.Log("Spawning an item!");
                 SpawnRandomItem();
 
                 spawnCycle++;
@@ -92,6 +94,8 @@ namespace Assets.Scripts
             ItemProperties properties = itemProperties[Random.Range(0, itemProperties.Length)];
             CatchableItem item = itemPool.GetItem(properties);
             item.transform.position = spawnPos;
+            item.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+            item.AssignRandomPropertiesFrom(commonItemProperties);
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Assets.Scripts
                 GameObject go = UnityEngine.Object.Instantiate(catchableItemPrefab);
                 item = go.GetComponent<CatchableItem>();
             }
+            item.ItemPool = this;
             item.gameObject.SetActive(true);
             itemsInUse.Add(item);
             return item;
