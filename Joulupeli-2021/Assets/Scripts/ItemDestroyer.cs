@@ -43,6 +43,7 @@ namespace Assets.Scripts
             if (collision.TryGetComponent(out other))
             {
                 spawner.ItemPool.Destroy(other);
+                GameMemory.Instance.TakeALife();
             }
         }
 

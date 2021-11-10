@@ -18,7 +18,6 @@ namespace Assets.Scripts
         private void Awake()
         {
             textDisplay = GetComponent<TMP_Text>();
-            Debug.Log(textDisplay);
         }
 
         private void Start()

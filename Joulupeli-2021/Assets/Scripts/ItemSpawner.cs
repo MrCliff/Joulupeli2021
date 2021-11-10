@@ -16,6 +16,9 @@ namespace Assets.Scripts
         private float spawnAreaAboveTopEdge = 3;
 
         [SerializeField]
+        private float spawnAreaMargin = 1;
+
+        [SerializeField]
         [Min(0)]
         private float initialSpawnIntervalSec = 2;
 
@@ -61,8 +64,8 @@ namespace Assets.Scripts
             float zeroRelativeToCameraZ = 0 - mainCamera.transform.position.z;
             Vector3 cameraUpperLeft = mainCamera.ViewportToWorldPoint(new Vector3(0, 1, zeroRelativeToCameraZ));
             Vector3 cameraUpperRight = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, zeroRelativeToCameraZ));
-            spawnLineLeftEnd = cameraUpperLeft + Vector3.up * spawnAreaAboveTopEdge;
-            spawnLineRightEnd = cameraUpperRight + Vector3.up * spawnAreaAboveTopEdge;
+            spawnLineLeftEnd = cameraUpperLeft + Vector3.up * spawnAreaAboveTopEdge + Vector3.right * spawnAreaMargin;
+            spawnLineRightEnd = cameraUpperRight + Vector3.up * spawnAreaAboveTopEdge + Vector3.left * spawnAreaMargin;
         }
 
         /// <summary>

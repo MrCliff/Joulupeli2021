@@ -12,17 +12,15 @@ namespace Assets.Scripts
     public class GameMemory : MonoBehaviour
     {
         [SerializeField]
-        private int points;
+        private int points = 0;
+
+        [SerializeField]
+        private int playerLives = 3;
 
         /// <summary>
         /// Returns the currently active GameMemory.
         /// </summary>
         public static GameMemory Instance { get; private set; }
-
-        ///// <summary>
-        ///// Count how many times the game has been failed in a row.
-        ///// </summary>
-        //public int GameFailedInRowCount { get; private set; } = 0;
 
         /// <summary>
         /// Current point count of the player.
@@ -41,6 +39,24 @@ namespace Assets.Scripts
         /// Event for listening to the change of point count.
         /// </summary>
         public event Action<int> PointCount;
+
+        /// <summary>
+        /// Count of lives the player currently has.
+        /// </summary>
+        public int PlayerLives
+        {
+            get { return playerLives; }
+            private set
+            {
+                playerLives = value;
+                PlayerLifeCount?.Invoke(playerLives);
+            }
+        }
+
+        /// <summary>
+        /// Event for listening to the change of player life count.
+        /// </summary>
+        public event Action<int> PlayerLifeCount;
 
         private void Awake()
         {
@@ -64,20 +80,12 @@ namespace Assets.Scripts
             Points += points;
         }
 
-        ///// <summary>
-        ///// Increments the game failed in row count.
-        ///// </summary>
-        //public void IncrementGameFailedInRowCount()
-        //{
-        //    GameFailedInRowCount++;
-        //}
-
-        ///// <summary>
-        ///// Resets the game failed in row count to 0.
-        ///// </summary>
-        //public void ResetGameFailedInRowCount()
-        //{
-        //    GameFailedInRowCount = 0;
-        //}
+        /// <summary>
+        /// Takes one life from the active player lives.
+        /// </summary>
+        public void TakeALife()
+        {
+            PlayerLives--;
+        }
     }
 }
