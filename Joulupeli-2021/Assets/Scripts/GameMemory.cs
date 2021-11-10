@@ -11,6 +11,9 @@ namespace Assets.Scripts
     /// </summary>
     public class GameMemory : MonoBehaviour
     {
+        [SerializeField]
+        private int points;
+
         /// <summary>
         /// Returns the currently active GameMemory.
         /// </summary>
@@ -24,7 +27,20 @@ namespace Assets.Scripts
         /// <summary>
         /// Current point count of the player.
         /// </summary>
-        public int Points { get; private set; } = 0;
+        public int Points
+        {
+            get { return points; }
+            private set
+            {
+                points = value;
+                PointCount?.Invoke(points);
+            }
+        }
+
+        /// <summary>
+        /// Event for listening to the change of point count.
+        /// </summary>
+        public event Action<int> PointCount;
 
         private void Awake()
         {

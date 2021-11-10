@@ -54,7 +54,6 @@ namespace Assets.Scripts
         public void OnPointerDown(PointerEventData eventData)
         {
             GameMemory.Instance.AddPoints(properties.Points);
-            Debug.Log($"NAPS! Current points: {GameMemory.Instance.Points}");
             ItemPool.Destroy(this);
         }
 
