@@ -40,6 +40,8 @@ namespace Assets.Scripts
         private Vector3 spawnLineRightEnd;
         private int spawnCycle = 0;
 
+        private Coroutine spawningRoutine;
+
         /// <summary>
         /// Pool for all <see cref="CatchableItem"/> objects.
         /// </summary>
@@ -52,8 +54,18 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            //StartSpawning();
+        }
+
+        public void StartSpawning()
+        {
             UpdateSpawnArea();
-            StartCoroutine(SpawnItems());
+            spawningRoutine = StartCoroutine(SpawnItems());
+        }
+
+        public void StopSpawning()
+        {
+            StopCoroutine(spawningRoutine);
         }
 
         /// <summary>

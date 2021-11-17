@@ -15,7 +15,9 @@ namespace Assets.Scripts
         private int points = 0;
 
         [SerializeField]
-        private int playerLives = 3;
+        private int initialPlayerLives = 3;
+
+        private int playerLives;
 
         /// <summary>
         /// Returns the currently active GameMemory.
@@ -50,6 +52,11 @@ namespace Assets.Scripts
             {
                 playerLives = value;
                 PlayerLifeCount?.Invoke(playerLives);
+
+                if (playerLives <= 0)
+                {
+                    GameController.FindInstance().EndGameAsFailure();
+                }
             }
         }
 
@@ -71,6 +78,11 @@ namespace Assets.Scripts
             }
         }
 
+        private void Start()
+        {
+            ResetLives();
+        }
+
         /// <summary>
         /// Adds the given points to the total points count.
         /// </summary>
@@ -81,11 +93,27 @@ namespace Assets.Scripts
         }
 
         /// <summary>
+        /// Resets the point count to 0.
+        /// </summary>
+        public void ResetPoints()
+        {
+            Points = 0;
+        }
+
+        /// <summary>
         /// Takes one life from the active player lives.
         /// </summary>
         public void TakeALife()
         {
             PlayerLives--;
+        }
+
+        /// <summary>
+        /// Resets the life count to the initial value.
+        /// </summary>
+        public void ResetLives()
+        {
+            PlayerLives = initialPlayerLives;
         }
     }
 }

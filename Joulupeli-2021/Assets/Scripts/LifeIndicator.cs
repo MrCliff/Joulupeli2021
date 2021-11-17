@@ -34,6 +34,11 @@ namespace Assets.Scripts
             }
         }
 
+        private void OnEnable()
+        {
+            UpdateReferences();
+        }
+
         private void Awake()
         {
             UpdateReferences();
