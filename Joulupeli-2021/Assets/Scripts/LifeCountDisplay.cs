@@ -16,8 +16,13 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            GameMemory.Instance.PlayerLifeCount += UpdateLifeIndicators;
+            GameMemory.Instance.OnPlayerLifeCountChange += UpdateLifeIndicators;
             UpdateLifeIndicators(GameMemory.Instance.PlayerLives);
+        }
+
+        private void OnDestroy()
+        {
+            GameMemory.Instance.OnPlayerLifeCountChange -= UpdateLifeIndicators;
         }
 
         private void UpdateLifeIndicators(int lives)

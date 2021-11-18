@@ -22,8 +22,13 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            GameMemory.Instance.PointCount += UpdatePointCount;
+            GameMemory.Instance.OnPointCountChange += UpdatePointCount;
             UpdatePointCount(GameMemory.Instance.Points);
+        }
+
+        private void OnDestroy()
+        {
+            GameMemory.Instance.OnPointCountChange -= UpdatePointCount;
         }
 
         private void UpdatePointCount(int points)

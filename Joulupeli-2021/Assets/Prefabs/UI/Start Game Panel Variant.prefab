@@ -7,6 +7,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 607897065261576033, guid: b6d2e9339cae37e4a999a6fcbe2033e0,
+        type: 3}
+      propertyPath: m_text
+      value: "Joulun l\xE4hestyess\xE4 taivaalta alkaa tippua jouluisia asioita.
+        Ota kiinni mahdollisimman monta napauttamalla niit\xE4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 607897065261576033, guid: b6d2e9339cae37e4a999a6fcbe2033e0,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 13.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317411473129986669, guid: b6d2e9339cae37e4a999a6fcbe2033e0,
+        type: 3}
+      propertyPath: m_text
+      value: Joulupeli 2021
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317411473129986669, guid: b6d2e9339cae37e4a999a6fcbe2033e0,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 38.85
+      objectReference: {fileID: 0}
     - target: {fileID: 5206944279399616881, guid: b6d2e9339cae37e4a999a6fcbe2033e0,
         type: 3}
       propertyPath: m_Text
@@ -162,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Joulupeli 2021
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707018209229229186, guid: b6d2e9339cae37e4a999a6fcbe2033e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6d2e9339cae37e4a999a6fcbe2033e0, type: 3}

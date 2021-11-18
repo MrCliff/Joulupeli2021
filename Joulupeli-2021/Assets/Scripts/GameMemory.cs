@@ -33,14 +33,14 @@ namespace Assets.Scripts
             private set
             {
                 points = value;
-                PointCount?.Invoke(points);
+                OnPointCountChange?.Invoke(points);
             }
         }
 
         /// <summary>
         /// Event for listening to the change of point count.
         /// </summary>
-        public event Action<int> PointCount;
+        public event Action<int> OnPointCountChange;
 
         /// <summary>
         /// Count of lives the player currently has.
@@ -51,7 +51,7 @@ namespace Assets.Scripts
             private set
             {
                 playerLives = value;
-                PlayerLifeCount?.Invoke(playerLives);
+                OnPlayerLifeCountChange?.Invoke(playerLives);
 
                 if (playerLives <= 0)
                 {
@@ -63,7 +63,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Event for listening to the change of player life count.
         /// </summary>
-        public event Action<int> PlayerLifeCount;
+        public event Action<int> OnPlayerLifeCountChange;
 
         private void Awake()
         {
