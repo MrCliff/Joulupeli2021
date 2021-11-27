@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Assets.Scripts.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.UI
 {
     /// <summary>
     /// Displays the current points.

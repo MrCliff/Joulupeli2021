@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Assets.Scripts.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.UI
 {
     /// <summary>
     /// Displays the number of player lives.

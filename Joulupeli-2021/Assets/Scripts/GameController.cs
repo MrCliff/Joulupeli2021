@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Assets.Scripts.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
@@ -29,16 +31,11 @@ namespace Assets.Scripts
         private GameObject startGamePanel;
 
         [SerializeField]
-        private GameObject victoryPanel;
+        private GameObject highScorePanel;
 
         [SerializeField]
         private GameObject gameOverPanel;
 
-        [SerializeField]
-        private GameObject touchInputPanel;
-
-        //[SerializeField]
-        //private PlayerInput playerInput;
         [SerializeField]
         private ItemSpawner itemSpawner;
 
@@ -63,33 +60,28 @@ namespace Assets.Scripts
         }
 
         /// <summary>
-        /// Ends the game and shows the victory panel.
-        /// </summary>
-        public void EndGameAsVictorious()
-        {
-            if (gameEnded) return;
-            gameEnded = true;
-
-            //gameMemory.ResetGameFailedInRowCount();
-            itemSpawner.StopSpawning();
-
-            SwitchActionMapTo(ActionMapUI);
-            victoryPanel.SetActive(true);
-        }
-
-        /// <summary>
         /// Ends the game and shows the game over panel.
         /// </summary>
-        public void EndGameAsFailure()
+        public void EndGame()
         {
             if (gameEnded) return;
             gameEnded = true;
 
-            //gameMemory.IncrementGameFailedInRowCount();
             itemSpawner.StopSpawning();
 
             SwitchActionMapTo(ActionMapUI);
             gameOverPanel.SetActive(true);
+        }
+
+        public void OpenHighScores()
+        {
+            gameMemory.LoadHighScores();
+            TMP_InputField nameInputField = gameOverPanel.GetComponentInChildren<TMP_InputField>();
+            gameMemory.AddScore(new HighScore(nameInputField.text, gameMemory.Points));
+            gameMemory.SaveHighScores();
+
+            DeactivateAllPanels();
+            highScorePanel.SetActive(true);
         }
 
         public void StartGame()
@@ -144,7 +136,7 @@ namespace Assets.Scripts
         private void DeactivateAllPanels()
         {
             startGamePanel.SetActive(false);
-            //victoryPanel.SetActive(false);
+            highScorePanel.SetActive(false);
             gameOverPanel.SetActive(false);
         }
 
