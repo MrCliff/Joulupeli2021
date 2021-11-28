@@ -20,7 +20,7 @@ namespace Assets.Scripts
 
         private SpriteRenderer spriteRenderer;
         private BoxCollider2D triggerCollider;
-        private new Rigidbody2D rigidbody;
+        private Rigidbody2D rb;
 
         public ItemPool ItemPool { private get; set; }
 
@@ -41,7 +41,7 @@ namespace Assets.Scripts
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             triggerCollider = GetComponent<BoxCollider2D>();
-            rigidbody = GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody2D>();
         }
 
         private void Start()
@@ -60,10 +60,10 @@ namespace Assets.Scripts
 
         public void AssignRandomPropertiesFrom(CommonProperties commonItemProperties)
         {
-            rigidbody.drag = commonItemProperties.RandomLinearDrag();
-            rigidbody.angularDrag = commonItemProperties.RandomAngularDrag();
-            rigidbody.gravityScale = commonItemProperties.RandomGravityScale();
-            rigidbody.angularVelocity = commonItemProperties.RandomAngularVelocity();
+            rb.drag = commonItemProperties.RandomLinearDrag();
+            rb.angularDrag = commonItemProperties.RandomAngularDrag();
+            rb.gravityScale = commonItemProperties.RandomGravityScale();
+            rb.angularVelocity = commonItemProperties.RandomAngularVelocity();
         }
 
         private void AssignProperties(ItemProperties props)
