@@ -14,14 +14,17 @@ namespace Assets.Editor.Build
         private const string ENV_VAR_KEY_ALIAS = "UNITY_KEY_ALIAS";
         private const string ENV_VAR_KEY_PASS = "UNITY_KEY_PASSWORD";
 
+        private string versionText;
+
         [MenuItem("Build/Build all")]
         public static int BuildAll()
         {
-            IncrementBundleVersion();
+            BuildProject builder = new BuildProject();
+            builder.IncrementBundleVersion();
 
             int returnCode;
-            returnCode = BuildAndroid(false);
-            int returnCodeWebGL = BuildWebGL(false);
+            returnCode = builder.BuildAndroid(false);
+            int returnCodeWebGL = builder.BuildWebGL(false);
             if (returnCode == 0)
             {
                 returnCode = returnCodeWebGL;
@@ -33,10 +36,10 @@ namespace Assets.Editor.Build
         [MenuItem("Build/Build WebGL")]
         public static int BuildWebGL()
         {
-            return BuildWebGL(true);
+            return new BuildProject().BuildWebGL(true);
         }
 
-        public static int BuildWebGL(bool incrementVersion)
+        public int BuildWebGL(bool incrementVersion)
         {
             if (incrementVersion)
             {
@@ -56,10 +59,10 @@ namespace Assets.Editor.Build
         [MenuItem("Build/Build Android")]
         public static int BuildAndroid()
         {
-            return BuildAndroid(true);
+            return new BuildProject().BuildAndroid(true);
         }
 
-        public static int BuildAndroid(bool incrementVersion)
+        public int BuildAndroid(bool incrementVersion)
         {
             if (incrementVersion)
             {
@@ -71,7 +74,7 @@ namespace Assets.Editor.Build
             PlayerSettings.Android.keystorePass = Environment.GetEnvironmentVariable(ENV_VAR_KEYSTORE_MASTER_PASS);
             PlayerSettings.Android.keyaliasName = Environment.GetEnvironmentVariable(ENV_VAR_KEY_ALIAS);
             PlayerSettings.Android.keyaliasPass = Environment.GetEnvironmentVariable(ENV_VAR_KEY_PASS);
-            BuildReport report = PerformBuild("Builds/Joulupeli2021.apk", BuildTarget.Android);
+            BuildReport report = PerformBuild(string.Format("Builds/Joulupeli2021_v{0}.aab", versionText), BuildTarget.Android);
             if (report.summary.result == BuildResult.Failed)
             {
                 Debug.Log("Android build failed!");
@@ -81,7 +84,7 @@ namespace Assets.Editor.Build
             return 0;
         }
 
-        private static BuildReport PerformBuild(string outPath, BuildTarget target)
+        private BuildReport PerformBuild(string outPath, BuildTarget target)
         {
             BuildPlayerOptions options = new BuildPlayerOptions();
             options.scenes = new string[] {
@@ -93,9 +96,9 @@ namespace Assets.Editor.Build
             return BuildPipeline.BuildPlayer(options);
         }
 
-        private static void IncrementBundleVersion()
+        private void IncrementBundleVersion()
         {
-            string versionText = File.ReadAllText("version.txt");
+            versionText = File.ReadAllText("version.txt");
 
             if (versionText != null)
             {
