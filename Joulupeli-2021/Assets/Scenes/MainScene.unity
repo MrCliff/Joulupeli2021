@@ -632,7 +632,7 @@ MonoBehaviour:
     m_ActionId: b8c198f3-c596-4799-9d1d-b2d629c535fc
     m_ActionName: InGame/Point[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: TouchKeyboardMouse
   m_DefaultActionMap: InGame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
@@ -852,6 +852,7 @@ MonoBehaviour:
   highScorePanel: {fileID: 9008475979064205684}
   gameOverPanel: {fileID: 7033189386815283465}
   itemSpawner: {fileID: 1713411775}
+  playerInput: {fileID: 519420030}
   inputModule: {fileID: 483635213}
 --- !u!1 &1713411774
 GameObject:
@@ -965,8 +966,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.5
   m_Points:
-  - {x: -20.086206, y: -9}
-  - {x: 20.086206, y: -9}
+  - {x: -18.449831, y: -9}
+  - {x: 18.449831, y: -9}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

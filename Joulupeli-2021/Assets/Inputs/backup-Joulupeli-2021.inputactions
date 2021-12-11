@@ -29,7 +29,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -40,7 +40,7 @@
                     "path": "<Pointer>/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -51,7 +51,7 @@
                     "path": "<Touchscreen>/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;Keyboard&Mouse;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -62,7 +62,7 @@
                     "path": "<Touchscreen>/touch0/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -73,7 +73,7 @@
                     "path": "<Touchscreen>/touch1/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -84,7 +84,7 @@
                     "path": "<Touchscreen>/touch2/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -95,7 +95,7 @@
                     "path": "<Touchscreen>/touch3/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -106,7 +106,7 @@
                     "path": "<Touchscreen>/touch4/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -117,7 +117,7 @@
                     "path": "<Touchscreen>/touch5/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -128,7 +128,7 @@
                     "path": "<Touchscreen>/touch6/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -139,7 +139,7 @@
                     "path": "<Touchscreen>/touch7/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -150,7 +150,7 @@
                     "path": "<Touchscreen>/touch8/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -161,7 +161,7 @@
                     "path": "<Touchscreen>/touch9/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -172,7 +172,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -183,7 +183,7 @@
                     "path": "<Pen>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -194,7 +194,7 @@
                     "path": "<Pen>/tip",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -205,7 +205,7 @@
                     "path": "<Touchscreen>/touch*/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Touch;TouchKeyboardMouse",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -315,7 +315,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -326,7 +326,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -337,7 +337,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -348,7 +348,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -359,7 +359,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -370,7 +370,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -381,7 +381,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -392,7 +392,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -425,7 +425,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -436,7 +436,7 @@
                     "path": "<Pen>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -458,7 +458,7 @@
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": ";Keyboard&Mouse",
                     "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -469,7 +469,7 @@
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": ";Keyboard&Mouse",
                     "action": "MiddleClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -480,7 +480,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": ";Keyboard&Mouse",
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -491,7 +491,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -502,7 +502,7 @@
                     "path": "<Pen>/tip",
                     "interactions": "",
                     "processors": "",
-                    "groups": "TouchKeyboardMouse",
+                    "groups": "Keyboard&Mouse",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -522,6 +522,33 @@
         }
     ],
     "controlSchemes": [
+        {
+            "name": "Keyboard&Mouse",
+            "bindingGroup": "Keyboard&Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Touch",
+            "bindingGroup": "Touch",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
         {
             "name": "TouchKeyboardMouse",
             "bindingGroup": "TouchKeyboardMouse",

@@ -19,7 +19,7 @@ namespace Assets.Scripts
         public const string PlayerTag = "Player";
         public const string GameControllerTag = "GameController";
 
-        private const string ControlSchemeTouch = "TouchGamepad";
+        private const string ControlSchemeTouch = "Touch";
 
         private const string ActionMapInGame = "InGame";
         private const string ActionMapUI = "UI";
@@ -40,6 +40,9 @@ namespace Assets.Scripts
         private ItemSpawner itemSpawner;
 
         [SerializeField]
+        private PlayerInput playerInput;
+
+        [SerializeField]
         private InputSystemUIInputModule inputModule;
 
         private GameMemory gameMemory;
@@ -55,8 +58,9 @@ namespace Assets.Scripts
             startGamePanel.SetActive(true);
 
             Debug.Log("Current input devices " + string.Join(", ", InputSystem.devices));
-            //playerInput.onControlsChanged += input => Debug.Log("New controls are " + input.currentControlScheme);
-            //ActivateOnScreenInputsIfPossible();
+            playerInput.onControlsChanged += input => Debug.Log("New controls are " + input.currentControlScheme);
+            playerInput.onActionTriggered += input => Debug.Log("Action triggered: " + input.ToString());
+            //ActivateTouchInputsIfPossible();
         }
 
         /// <summary>
@@ -109,26 +113,24 @@ namespace Assets.Scripts
 
         private void SwitchActionMapTo(string actionMapName)
         {
-            //playerInput.SwitchCurrentActionMap(actionMapName);
+            playerInput.SwitchCurrentActionMap(actionMapName);
             InputAction pointAction = inputModule.actionsAsset.FindActionMap(actionMapName).FindAction(ActionPoint);
             inputModule.point = InputActionReference.Create(pointAction);
             InputAction clickAction = inputModule.actionsAsset.FindActionMap(actionMapName).FindAction(ActionClick);
             inputModule.leftClick = InputActionReference.Create(clickAction);
         }
 
-        //public void ActivateOnScreenInputsIfPossible()
-        //{
-        //    if (Gamepad.current == null || Touchscreen.current == null)
-        //    {
-        //        touchInputPanel.SetActive(false);
-        //        return;
-        //    }
+        public void ActivateTouchInputsIfPossible()
+        {
+            if (Touchscreen.current == null)
+            {
+                return;
+            }
 
-        //    touchInputPanel.SetActive(true);
-        //    InputDevice[] devices = { Gamepad.current, Touchscreen.current };
-        //    Debug.Log($"Switching input control scheme to {ControlSchemeTouch} with devices " + string.Join<InputDevice>(", ", devices));
-        //    //playerInput.SwitchCurrentControlScheme(ControlSchemeTouch, devices);
-        //}
+            InputDevice[] devices = { Touchscreen.current };
+            Debug.Log($"Switching input control scheme to {ControlSchemeTouch} with devices " + string.Join<InputDevice>(", ", devices));
+            playerInput.SwitchCurrentControlScheme(ControlSchemeTouch, devices);
+        }
 
         /// <summary>
         /// Deactivates all UI-panels.
