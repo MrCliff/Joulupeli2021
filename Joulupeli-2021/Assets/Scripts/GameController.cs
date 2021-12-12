@@ -60,7 +60,7 @@ namespace Assets.Scripts
             Debug.Log("Current input devices " + string.Join(", ", InputSystem.devices));
             playerInput.onControlsChanged += input => Debug.Log("New controls are " + input.currentControlScheme);
             playerInput.onActionTriggered += input => Debug.Log("Action triggered: " + input.ToString());
-            //ActivateTouchInputsIfPossible();
+            ActivateTouchInputsIfPossible();
         }
 
         /// <summary>
@@ -128,8 +128,8 @@ namespace Assets.Scripts
             }
 
             InputDevice[] devices = { Touchscreen.current };
-            Debug.Log($"Switching input control scheme to {ControlSchemeTouch} with devices " + string.Join<InputDevice>(", ", devices));
-            playerInput.SwitchCurrentControlScheme(ControlSchemeTouch, devices);
+            Debug.Log($"Switching input control scheme to use devices " + string.Join<InputDevice>(", ", devices));
+            playerInput.SwitchCurrentControlScheme(devices);
         }
 
         /// <summary>
